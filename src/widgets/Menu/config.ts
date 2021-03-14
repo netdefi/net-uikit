@@ -99,15 +99,15 @@ export const links = [
       // },
       {
         label: "Github",
-        href: "https://github.com/goosedefi/",
+        href: "https://github.com/netdefi/",
       },
       {
         label: "Docs",
-        href: "https://goosedefi.gitbook.io/goose-finance/",
+        href: "https://netdefi.gitbook.io/net-finance/",
       },
       {
         label: "Blog",
-        href: "https://goosefinance.medium.com/",
+        href: "https://netdefi.medium.com/",
       },
     ],
   },
@@ -128,7 +128,7 @@ export const socials = [
       // },
       {
         label: "中文",
-        href: "https://t.me/goosefinancechinese",
+        href: "https://t.me/netfinancechinese",
       },
       // {
       //   label: "Tiếng Việt",
@@ -140,11 +140,11 @@ export const socials = [
       // },
       {
         label: "русский",
-        href: "https://t.me/goosefinancerussian",
+        href: "https://t.me/netfinancerussian",
       },
       {
         label: "Türkiye",
-        href: "https://t.me/GooseFinanceTurkey",
+        href: "https://t.me/NetFinanceTurkey",
       },
       // {
       //   label: "Português",
@@ -152,11 +152,11 @@ export const socials = [
       // },
       {
         label: "Español",
-        href: "https://t.me/goosefinancespanish",
+        href: "https://t.me/netfinancespanish",
       },
       {
         label: "日本語",
-        href: "https://t.me/goosefinancejapanese",
+        href: "https://t.me/netfinancejapanese",
       },
       // {
       //   label: "Français",
@@ -164,18 +164,18 @@ export const socials = [
       // },
       {
         label: "Announcements",
-        href: "https://t.me/goosefinanceann",
+        href: "https://t.me/netfinanceann",
       },
       {
         label: "Price Bot",
-        href: "https://t.me/BinanceRocketEGG",
+        href: "https://t.me/BinanceRocketNet",
       },
     ],
   },
   {
     label: "Twitter",
     icon: "TwitterIcon",
-    href: "https://twitter.com/FinanceGoose",
+    href: "https://twitter.com/FinanceNet",
   },
 ];
 
