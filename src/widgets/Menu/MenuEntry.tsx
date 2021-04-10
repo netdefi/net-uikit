@@ -3,7 +3,7 @@ import { MENU_ENTRY_HEIGHT } from "./config";
 
 export interface Props {
   secondary?: boolean;
-  isActive?: boolean;
+  isActive?: boolean;  
   theme: DefaultTheme;
 }
 
@@ -29,9 +29,9 @@ const MenuEntry = styled.div<Props>`
   align-items: center;
   height: ${MENU_ENTRY_HEIGHT}px;
   padding: ${({ secondary }) => (secondary ? "0 32px" : "0 16px")};
-  font-size: ${({ secondary }) => (secondary ? "14px" : "16px")};
-  background-color: ${({ secondary, theme }) => (secondary ? theme.colors.background : "transparent")};
-  color: ${({ theme }) => theme.colors.textSubtle};
+  font-size: ${({ secondary }) => (secondary ? "16px" : "18px")};
+  background-color: ${({ secondary, theme }) => (secondary ? "transparent" : "transparent")};
+  color: ${({ isActive, theme }) => (isActive ? theme.colors.primary : theme.colors.textSubtle)};
   box-shadow: ${({ isActive, theme }) => (isActive ? `inset 4px 0px 0px ${theme.colors.primary}` : "none")};
 
   a {
@@ -39,14 +39,15 @@ const MenuEntry = styled.div<Props>`
     align-items: center;
     width: 100%;
     height: 100%;
+    color: ${({ isActive, theme }) => (isActive ? theme.colors.primary : theme.colors.textSubtle)};
   }
 
   svg {
-    fill: ${({ theme }) => theme.colors.textSubtle};
+    fill: ${({ isActive, theme }) => (isActive ? theme.colors.primary : theme.colors.textSubtle)};
   }
 
   &:hover {
-    background-color: ${({ theme }) => theme.colors.tertiary};
+    background-color: ${({ theme }) => theme.nav.hover};
   }
 
   // Safari fix

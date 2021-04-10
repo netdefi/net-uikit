@@ -78,14 +78,26 @@ const PanelFooter: React.FC<Props> = ({
   return (
     <Container>
       <SocialEntry>
-        {cakePriceUsd ? (
-          <PriceLink href={priceLink} target="_blank">
-            <PancakeRoundIcon width="24px" mr="8px" />
-            <Text color="textSubtle" bold>{`$${cakePriceUsd.toFixed(3)}`}</Text>
-          </PriceLink>
-        ) : (
-          <Skeleton width={80} height={24} />
-        )}
+      <Dropdown
+          position="top-right"
+          target={
+            <Button variant="text" startIcon={<LanguageIcon color="textSubtle" width="24px" />}>
+              <Text color="textSubtle">{currentLang?.toUpperCase()}</Text>
+            </Button>
+          }
+        >
+          {langs.map((lang) => (
+            <MenuButton
+              key={lang.code}
+              fullWidth
+              onClick={() => setLang(lang)}
+              // Safari fix
+              style={{ minHeight: "32px", height: "auto" }}
+            >
+              {lang.language}
+            </MenuButton>
+          ))}
+        </Dropdown>        
         <Flex>
           {socials.map((social, index) => {
             const Icon = Icons[social.icon];
@@ -109,39 +121,7 @@ const PanelFooter: React.FC<Props> = ({
             );
           })}
         </Flex>
-      </SocialEntry>
-      <SettingsEntry>
-        <Button variant="text" onClick={() => toggleTheme(!isDark)}>
-          {/* alignItems center is a Safari fix */}
-          <Flex alignItems="center">
-            <SunIcon color={isDark ? "textDisabled" : "text"} width="24px" />
-            <Text color="textDisabled" mx="4px">
-              /
-            </Text>
-            <MoonIcon color={isDark ? "text" : "textDisabled"} width="24px" />
-          </Flex>
-        </Button>
-        <Dropdown
-          position="top-right"
-          target={
-            <Button variant="text" startIcon={<LanguageIcon color="textSubtle" width="24px" />}>
-              <Text color="textSubtle">{currentLang?.toUpperCase()}</Text>
-            </Button>
-          }
-        >
-          {langs.map((lang) => (
-            <MenuButton
-              key={lang.code}
-              fullWidth
-              onClick={() => setLang(lang)}
-              // Safari fix
-              style={{ minHeight: "32px", height: "auto" }}
-            >
-              {lang.language}
-            </MenuButton>
-          ))}
-        </Dropdown>
-      </SettingsEntry>
+      </SocialEntry>      
     </Container>
   );
 };
